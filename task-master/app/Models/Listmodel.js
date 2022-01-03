@@ -13,7 +13,7 @@ export class List {
     <header>
       <h3 class="text-center">${this.listHeader}</h3>
     </header>
-    <li>${this.listItem}</li>
+    <li class="checkbox">${this.listItem}</li>
   </ul>
 </div>`
   }
