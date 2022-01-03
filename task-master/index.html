@@ -57,14 +57,25 @@
   <footer class="bg-dark text-light">
     <div class="text-center no-select">
       <!-- Modal -->
-      <div class="modal" id="new-list" tabindex="-1" aria-labelledby="newListLabel" aria-hidden="true">
+      <div class="modal" id="new-list" tabindex="-1">
         <div class="modal-dialog">
           <div class="modal-content">
-            <div class="modal-header bg-primary text-light">
-              <h5 class="modal-title" id="newListingLabel">New List</h5>
+            <div class="modal-header">
+              <h5 class="modal-title">New List</h5>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body" id="modal-body-slot">
+            <div class="modal-body">
+              <div class="input-group mb-3">
+                <div class="input-group-text">
+                  <input class="form-check-input mt-0" type="checkbox" value="" aria-label="Checkbox for following text input">
+                </div>
+                <input type="text" class="form-control" aria-label="Text input with checkbox">
+                <p>List Item...</p>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
             </div>
           </div>
         </div>
@@ -78,7 +89,32 @@
     integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
     crossorigin="anonymous"></script>
     <script src="app/main.js" type="module"></script>
-
-
+    
+    
   </body>
-</html>
+  </html>
+  
+  
+  <!-- Checkbox bs -->
+  
+  <div class="input-group mb-3">
+    <div class="input-group-text">
+      <input class="form-check-input mt-0" type="checkbox" value="" aria-label="Checkbox for following text input">
+    </div>
+    <input type="text" class="form-control" aria-label="Text input with checkbox">
+  </div>
+
+
+  <!-- old modal -->
+  <!-- <div class="modal" id="new-list" tabindex="-1" aria-labelledby="newListLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header bg-primary text-light">
+          <h5 class="modal-title" id="newListingLabel">New List</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body" id="modal-body-slot">
+        </div>
+      </div>
+    </div>
+  </div> -->
