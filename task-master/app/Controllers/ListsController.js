@@ -38,7 +38,7 @@ export class ListsController {
     form.reset()
     // close modal
     // @ts-ignore
-    bootstrap.Modal.getOrCreateInstance(document.getElementById('new-list')).hide()
+    bootstrap.Modal.getOrCreateInstance(document.getElementById('new-list')).toggle()
   }
 
   removeList(id){
