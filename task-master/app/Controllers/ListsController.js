@@ -15,7 +15,7 @@ function drawListForm(){
 
 export class ListsController {
   constructor() {
-    ProxyState.on('cars', _drawLists)
+    ProxyState.on('lists', _drawLists)
   }
   drawLists() {
     _drawLists()

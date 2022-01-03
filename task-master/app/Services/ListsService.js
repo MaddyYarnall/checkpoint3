@@ -10,7 +10,7 @@ class ListsService{
   createList(listData){
     const list = new List(listData)
     ProxyState.lists = [...ProxyState.lists
-      // , list
+      
     ]
   }
 }
