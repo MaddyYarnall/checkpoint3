@@ -1,6 +1,6 @@
 import { ProxyState } from "../AppState.js";
+import { getListForm } from "../Components/ListForm.js";
 import { listsService } from "../Services/ListsService.js";
-import { getListForm } from "../Utils/Components/ListForm.js";
 
 function _drawLists(){
   const lists = ProxyState.lists
