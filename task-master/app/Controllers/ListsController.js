@@ -1,5 +1,4 @@
 import { ProxyState } from "../AppState.js";
-import { getListForm } from "../Components/ListForm.js";
 import { listsService } from "../Services/ListsService.js";
 
 function _drawLists(){
@@ -9,46 +8,57 @@ function _drawLists(){
   document.getElementById('lists').innerHTML = template
 }
 
-function drawListForm(){
-  document.getElementById('modal-body-slot').innerHTML = getListForm()
-}
 
+// function drawListForm(){
+//   document.getElementById('modal-body-slot').innerHTML = getListForm()
+// }
 export class ListsController {
   constructor() {
+
     ProxyState.on('lists', _drawLists)
-  }
-  drawLists() {
     _drawLists()
-    document.getElementById('modal-body-slot').innerHTML = getListForm()
+    
   }
-
+  
   createList() {
-    // prevents page reload
     window.event.preventDefault()
-    console.log("submitted")
-    /** @type {HTMLFormElement} */
-    // @ts-ignore
     const form = window.event.target
+
     const listData = {
-      title: form.listHeader.value,
-      item: form.listItem.value
+      title: form.title.value,
+      color: form.color.value
     }
+
     listsService.createList(listData)
-    // clear form
     form.reset()
-    // close modal
-    // @ts-ignore
-    bootstrap.Modal.getOrCreateInstance(document.getElementById('new-list')).toggle()
+    
   }
 
-  removeList(id){
-    console.log('deleting', id)
-    listsService.removeList(id)
-  }
+    
 
-drawListForm(){
-  drawListForm()
+//     // clear form
+//     form.reset()
+//     // close modal
+//     // @ts-ignore
+//     bootstrap.Modal.getOrCreateInstance(document.getElementById('new-list')).toggle()
+//   }
+
+//   removeList(id){
+//     console.log('deleting', id)
+//     listsService.removeList(id)
+//   }
+
+// drawListForm(){
+//   drawListForm()
+// }
+
+
+removeList(listId) {
+  console.log(listId)
+
+  if (confirm("Are you sure you want to delete this list?")) {
+      listsService.removeList(listId)
+  }
 }
-
 
 }
