@@ -1,7 +1,13 @@
+import { Task } from "../Models/Task.js"
+
 class TasksService {
-  createTask(taskData){
+  createTask(taskData) {
     const task = new Task(taskData)
-    
+
+  }
+
+  removeTask(id) {
+
   }
 }
 
