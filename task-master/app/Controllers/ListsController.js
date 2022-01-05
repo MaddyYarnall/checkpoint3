@@ -40,12 +40,9 @@ export class ListsController {
     
   }
 
-    
-
-    
-    form.reset()
-
     //NOTE My modal wont pop up when I click my add list button. It used to, but then I broke it 
+
+    //NOTE I'm also getting an "unexpected token" error when I first refresh the page about this bootstrap.Modal thing. Its saying that the '.' should be a ',' on the document.getelementbyid
    
     // @ts-ignore
     bootstrap.Modal.getOrCreateInstance(document.getElementById('new-list')).toggle()
