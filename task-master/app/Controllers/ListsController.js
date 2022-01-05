@@ -1,6 +1,9 @@
 import { ProxyState } from "../AppState.js";
+import { getListForm } from "../Components/ListForm.js";
 import { listsService } from "../Services/ListsService.js";
 
+//NOTE Nothing is letting me draw anything (besides html things) to the page
+ 
 function _drawLists(){
   const lists = ProxyState.lists
   let template = ''
@@ -8,10 +11,11 @@ function _drawLists(){
   document.getElementById('lists').innerHTML = template
 }
 
+//NOTE I thought everything was connected, but even with my draw list form function and my get list form function, nothing will draw
+function drawListForm(){
+  document.getElementById('modal-body-slot').innerHTML = getListForm()
+}
 
-// function drawListForm(){
-//   document.getElementById('modal-body-slot').innerHTML = getListForm()
-// }
 export class ListsController {
   constructor() {
 
@@ -23,6 +27,8 @@ export class ListsController {
   createList() {
     window.event.preventDefault()
     const form = window.event.target
+
+//NOTE This is saying it doesn't exist on event target
 
     const listData = {
       title: form.title.value,
@@ -36,22 +42,27 @@ export class ListsController {
 
     
 
-//     // clear form
-//     form.reset()
-//     // close modal
-//     // @ts-ignore
-//     bootstrap.Modal.getOrCreateInstance(document.getElementById('new-list')).toggle()
-//   }
+    
+    form.reset()
 
-//   removeList(id){
-//     console.log('deleting', id)
-//     listsService.removeList(id)
-//   }
+    //NOTE My modal wont pop up when I click my add list button. It used to, but then I broke it 
+   
+    // @ts-ignore
+    bootstrap.Modal.getOrCreateInstance(document.getElementById('new-list')).toggle()
+  }
 
-// drawListForm(){
-//   drawListForm()
-// }
+  removeList(id){
+    console.log('deleting', id)
+    listsService.removeList(id)
+  }
 
+
+//NOTE I'm not able to draw my list modal or anything to the page when I click on the button
+drawListForm(){
+  drawListForm()
+}
+
+//NOTE Technically my removelist function doesn't apply yet considering I cant get anything to draw to the page let alone delete something off the page
 
 removeList(listId) {
   console.log(listId)
